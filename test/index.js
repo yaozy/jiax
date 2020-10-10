@@ -3,14 +3,21 @@ const http = require('http');
 const jiax = require('../lib');
 
 
-const app = new jiax.App();
+// 初始化默认session
+// 自定义session只要实现create及get两个方法即可
+const session = new jiax.Session(20);
+
+
+const app = new jiax.App(session);
+
 
 
 // 设置全局插件
 app.use(jiax.plugins.gzip());
 
 // 静态资源
-app.route('/static', false, jiax.plugins.static('./'));
+app.route('/js', false, jiax.plugins.static('./test'));
+
 
 
 // 测试接口
