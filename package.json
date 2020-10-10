@@ -1,10 +1,10 @@
 {
   "name": "jiax",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "jiax",
   "author": "",
   "license": "MIT",
-  "main": "lib/index.js",
+  "main": "test/index.js",
   "scripts": {
     "test": "node ./test/index.js"
   },
