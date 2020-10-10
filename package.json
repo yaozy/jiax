@@ -1,0 +1,16 @@
+{
+  "name": "jiax",
+  "version": "1.0.21",
+  "description": "jiax",
+  "author": "",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "node ./test/index.js"
+  },
+  "dependencies": {
+    "bunyan": "^1.8.12",
+    "mysql": "^2.16.0",
+    "pg": "^7.3.0"
+  }
+}
