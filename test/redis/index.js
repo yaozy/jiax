@@ -1,2 +1,2 @@
-require('./test');
-require('./performance');
+require('./parser');
+// require('./performance');
