@@ -1,2 +1,4 @@
-require('./parser');
-// require('./performance');
+// require('./parser');
+require('./performance');
+
+

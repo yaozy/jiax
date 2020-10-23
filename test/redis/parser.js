@@ -1,56 +1,3 @@
-// let receiver = require('../../lib/utils/redis/receiver');
-
-// const commands = [];
-
-
-// const [receive] = receiver(commands);
-
-
-
-// function addTest(name, value1, value2) {
-
-//     new Promise((...args) => {
-
-//         commands.push(args);
-
-//     }).then(result => {
-        
-//         if (value1)
-//         {
-//             if (result instanceof Array)
-//             {
-//                 result = result.join('');
-//             }
-
-//             console.log(name, result === value1);
-//         }
-
-//     }).catch(err => {
-        
-//         if (value2)
-//         {
-//             console.log(name, err === value2);
-//         }
-//         else
-//         {
-//             throw err;
-//         }
-
-//     });
-// };
-
-
-// addTest('test 1', ['abcde中国要有', '0123456789', '123456'].join(''));
-
-// addTest('test 2', ['abcde中国要有', '0123中456789', '123456'].join(''));
-
-// addTest('test 3', '中国');
-
-// addTest('test 4', '', '中国');
-
-// addTest('test 5', 123);
-
-
 const Parser = require('../../lib/utils/redis/parser');
 
 
@@ -99,5 +46,3 @@ parser.parse(Buffer.from('\n$10\r'), 0);
 parser.parse(Buffer.from('\n0123456789'), 0);
 parser.parse(Buffer.from('\r\n:123456\r\n'), 0);
 
-
-debugger

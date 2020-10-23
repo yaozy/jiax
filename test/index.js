@@ -16,12 +16,12 @@ const app = new jiax.App(session);
 app.use(jiax.plugins.gzip());
 
 // 静态资源
-app.route('/js', false, jiax.plugins.static('./test'));
+app.route('/js', jiax.plugins.static('./test'));
 
 
 
 // 测试接口
-app.route('/test', false, async function (context, next) {
+app.route('/test', async function (context, next) {
 
     switch (context.request.method) {
         case 'GET':
@@ -34,7 +34,7 @@ app.route('/test', false, async function (context, next) {
             await next();
             break;
     }
-})
+});
 
 
 
@@ -42,3 +42,9 @@ app.route('/test', false, async function (context, next) {
 http.createServer(app.dispatchHandler()).listen('8088');
 
 console.log('http server listening at port', '8088');
+
+
+
+// 测试redis
+require('./redis');
+
