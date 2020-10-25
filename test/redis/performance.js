@@ -1,9 +1,9 @@
-const RedisClient = require('../../lib').RedisClient;
+const Redis = require('../../lib').RedisCluster;
 
 
 (async function () {
 
-    let client = new RedisClient(/*{ host: '127.0.0.1', port: 6379 }*/);
+    let client = new Redis(/*{ host: '127.0.0.1', port: 6379 }*/);
     
     await client.connect();
 
@@ -67,10 +67,10 @@ const RedisClient = require('../../lib').RedisClient;
 
         value = await client.hgetall('test');
 
-        // if (index < 10 || index % 100 === 0)
-        // {
-        //     console.log(value);
-        // }
+        if (index < 10 || index % 100 === 0)
+        {
+            console.log(value);
+        }
     }
 
 
