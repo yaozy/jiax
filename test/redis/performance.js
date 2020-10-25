@@ -1,10 +1,20 @@
-const Redis = require('../../lib').RedisCluster;
+const yaxi = require('../../lib');
 
 
 (async function () {
 
-    let client = new Redis(/*{ host: '127.0.0.1', port: 6379 }*/);
+    let client = new yaxi.Redis({
+
+        // 使用redis集群
+        cluster: [
+            {
+                host: '127.0.0.1',
+                port: 6379 
+            }
+        ]
+    });
     
+
     await client.connect();
 
 
